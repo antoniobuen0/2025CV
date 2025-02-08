@@ -7,10 +7,9 @@ import Layout from "../layouts/Layout.astro";
 import { FORMACION } from '../data/formacion'
 import { PROYECTOS } from '../data/proyectos'
 
-let selectedSection = 'EXPERIENCIA'
-function handleChange(e: Event) {
-  selectedSection = (e.target as HTMLSelectElement).value
-}
+const experienceHTML = EXPERIENCE.map((exp) => `<li>${exp.title} en ${exp.company}</li>`).join('')
+const formacionHTML = FORMACION.map((edu) => `<li>${edu.degree} - ${edu.institution}</li>`).join('')
+const proyectosHTML = `<p>${PROYECTOS}</p>` // Ajusta si es un array u objeto
 ---
 
 <Layout title="Antonio Bueno">
@@ -117,23 +116,40 @@ function handleChange(e: Event) {
               </h2>
             </div>
             <div>
-              <select onchange={handleChange}>
+              <select id="section-selector">
                 <option value="EXPERIENCIA">EXPERIENCIA</option>
                 <option value="FORMACION">FORMACIÓN</option>
                 <option value="PROYECTOS">PROYECTOS</option>
               </select>
 
-              {selectedSection === 'EXPERIENCIA' && (
-                <ol>{EXPERIENCE.map((exp) => <Experience {...exp} />)}</ol>
-              )}
-              {selectedSection === 'FORMACION' && (
-                <ol>
-                  {FORMACION.map((edu) => (
-                    <li>{edu.degree}</li>
-                  ))}
-                </ol>
-              )}
-              {selectedSection === 'PROYECTOS' && <div>{PROYECTOS}</div>}
+              <div id="experience-content">
+                <ol>{@html experienceHTML}</ol>
+              </div>
+
+              <div id="formacion-content" style="display:none;">
+                <ol>{@html formacionHTML}</ol>
+              </div>
+
+              <div id="proyectos-content" style="display:none;">
+                {@html proyectosHTML}
+              </div>
+
+              <script is:inline>
+                const sel = document.getElementById('section-selector')
+                const expDiv = document.getElementById('experience-content')
+                const forDiv = document.getElementById('formacion-content')
+                const proyDiv = document.getElementById('proyectos-content')
+
+                sel.addEventListener('change', (evt) => {
+                  expDiv.style.display = 'none'
+                  forDiv.style.display = 'none'
+                  proyDiv.style.display = 'none'
+                  const val = evt.target.value
+                  if (val === 'EXPERIENCIA') expDiv.style.display = ''
+                  else if (val === 'FORMACION') forDiv.style.display = ''
+                  else if (val === 'PROYECTOS') proyDiv.style.display = ''
+                })
+              </script>
 
               <div class="mt-12">
                 <a
