@@ -1,15 +1,14 @@
 ---
 import Component from "../components/Component.astro";
-import Experience from "../components/experience/index.astro";
 import { EXPERIENCE } from "../data/experience";
 import { SOCIALS } from "../data/socials";
 import Layout from "../layouts/Layout.astro";
-import { FORMACION } from '../data/formacion'
-import { PROYECTOS } from '../data/proyectos'
+import { FORMACION } from '../data/formacion';
+import { PROYECTOS } from '../data/proyectos';
 
-const experienceHTML = EXPERIENCE.map((exp) => `<li>${exp.title} en ${exp.company}</li>`).join('')
-const formacionHTML = FORMACION.map((edu) => `<li>${edu.degree} - ${edu.institution}</li>`).join('')
-const proyectosHTML = `<p>${PROYECTOS}</p>` // Ajusta si es un array u objeto
+const experienceHTML = EXPERIENCE.map((exp) => `<li>${exp.title} en ${exp.company}</li>`).join('');
+const formacionHTML = FORMACION.map((edu) => `<li>${edu.degree} - ${edu.institution}</li>`).join('');
+const proyectosHTML = `<p>${PROYECTOS}</p>`;
 ---
 
 <Layout title="Antonio Bueno">
@@ -123,32 +122,32 @@ const proyectosHTML = `<p>${PROYECTOS}</p>` // Ajusta si es un array u objeto
               </select>
 
               <div id="experience-content">
-                <ol>{@html experienceHTML}</ol>
+                <ol set:html={experienceHTML}></ol>
               </div>
 
               <div id="formacion-content" style="display:none;">
-                <ol>{@html formacionHTML}</ol>
+                <ol set:html={formacionHTML}></ol>
               </div>
 
               <div id="proyectos-content" style="display:none;">
-                {@html proyectosHTML}
+                <div set:html={proyectosHTML}></div>
               </div>
 
               <script is:inline>
-                const sel = document.getElementById('section-selector')
-                const expDiv = document.getElementById('experience-content')
-                const forDiv = document.getElementById('formacion-content')
-                const proyDiv = document.getElementById('proyectos-content')
+                const sel = document.getElementById('section-selector');
+                const exp = document.getElementById('experience-content');
+                const form = document.getElementById('formacion-content');
+                const proy = document.getElementById('proyectos-content');
 
                 sel.addEventListener('change', (evt) => {
-                  expDiv.style.display = 'none'
-                  forDiv.style.display = 'none'
-                  proyDiv.style.display = 'none'
-                  const val = evt.target.value
-                  if (val === 'EXPERIENCIA') expDiv.style.display = ''
-                  else if (val === 'FORMACION') forDiv.style.display = ''
-                  else if (val === 'PROYECTOS') proyDiv.style.display = ''
-                })
+                  exp.style.display = 'none';
+                  form.style.display = 'none';
+                  proy.style.display = 'none';
+
+                  if (evt.target.value === 'EXPERIENCIA') exp.style.display = '';
+                  else if (evt.target.value === 'FORMACION') form.style.display = '';
+                  else if (evt.target.value === 'PROYECTOS') proy.style.display = '';
+                });
               </script>
 
               <div class="mt-12">
