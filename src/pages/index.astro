@@ -126,7 +126,13 @@ function handleChange(e: Event) {
               {selectedSection === 'EXPERIENCIA' && (
                 <ol>{EXPERIENCE.map((exp) => <Experience {...exp} />)}</ol>
               )}
-              {selectedSection === 'FORMACION' && <div>{FORMACION}</div>}
+              {selectedSection === 'FORMACION' && (
+                <ol>
+                  {FORMACION.map((edu) => (
+                    <li>{edu.degree}</li>
+                  ))}
+                </ol>
+              )}
               {selectedSection === 'PROYECTOS' && <div>{PROYECTOS}</div>}
 
               <div class="mt-12">

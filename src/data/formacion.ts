@@ -1,13 +1,12 @@
 import type { Props as EducationProp } from "../components/education/props";
 
-export const EDUCATION: EducationProp[] = [
+export const FORMACION: EducationProp[] = [
   {
     dates: "2024",
     degree: "Data Science Mastery",
     institution: "DS4B",
-    institutionUrl: "https://www.ds4b.com", // Actualiza la URL si es necesario
-    description:
-      "Fundamentos de Data Science: Python, estadística, numpy, pandas. Business Analytics: técnicas analíticas avanzadas para el negocio, generación de insights, construcción de business case. Machine Learning: algoritmos, entrenamiento de modelos, creación de data apps, sistemas predictivos de alto rendimiento, forecasting.",
+    institutionUrl: "https://www.ds4b.com",
+    description: "Fundamentos de Data Science: Python, estadística, etc.",
     logo: "/logos/ds4b.jpeg",
   },
   {
