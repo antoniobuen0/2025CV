@@ -4,8 +4,8 @@ import Experience from "../components/experience/index.astro";
 import { EXPERIENCE } from "../data/experience";
 import { SOCIALS } from "../data/socials";
 import Layout from "../layouts/Layout.astro";
-import { FORMACION } from '../lib/data/formacion'
-import { PROYECTOS } from '../lib/data/proyectos'
+import { FORMACION } from '../data/formacion'
+import { PROYECTOS } from '../data/proyectos'
 
 let selectedSection = 'EXPERIENCIA'
 function handleChange(e: Event) {
@@ -117,7 +117,7 @@ function handleChange(e: Event) {
               </h2>
             </div>
             <div>
-              <select on:change={handleChange}>
+              <select onchange={handleChange}>
                 <option value="EXPERIENCIA">EXPERIENCIA</option>
                 <option value="FORMACION">FORMACIÓN</option>
                 <option value="PROYECTOS">PROYECTOS</option>
