@@ -4,6 +4,13 @@ import Experience from "../components/experience/index.astro";
 import { EXPERIENCE } from "../data/experience";
 import { SOCIALS } from "../data/socials";
 import Layout from "../layouts/Layout.astro";
+import { FORMACION } from '../lib/data/formacion'
+import { PROYECTOS } from '../lib/data/proyectos'
+
+let selectedSection = 'EXPERIENCIA'
+function handleChange(e: Event) {
+  selectedSection = (e.target as HTMLSelectElement).value
+}
 ---
 
 <Layout title="Antonio Bueno">
@@ -87,11 +94,10 @@ import Layout from "../layouts/Layout.astro";
             <div>
               <div class="mb-4 space-y-4">
                 <p>
-                  Analista de datos especializado en el sector salud/digital.
+                  Analista de datos especializado en sectores salud/digital/energía.
                 </p>
-
                 <p>
-                  Looking forward to new challenges and exciting collaborations!
+                  Abierto a colaboraciones y proyectos interesantes.
                 </p>
               </div>
             </div>
@@ -109,10 +115,19 @@ import Layout from "../layouts/Layout.astro";
               >
                 Experiencia
               </h2>
-            </div><div>
-              <ol class="group/list space-y-12">
-                {EXPERIENCE.map((experience) => <Experience {...experience} />)}
-              </ol>
+            </div>
+            <div>
+              <select on:change={handleChange}>
+                <option value="EXPERIENCIA">EXPERIENCIA</option>
+                <option value="FORMACION">FORMACIÓN</option>
+                <option value="PROYECTOS">PROYECTOS</option>
+              </select>
+
+              {selectedSection === 'EXPERIENCIA' && (
+                <ol>{EXPERIENCE.map((exp) => <Experience {...exp} />)}</ol>
+              )}
+              {selectedSection === 'FORMACION' && <div>{FORMACION}</div>}
+              {selectedSection === 'PROYECTOS' && <div>{PROYECTOS}</div>}
 
               <div class="mt-12">
                 <a
@@ -127,13 +142,13 @@ import Layout from "../layouts/Layout.astro";
                     <span
                       class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
                     >
-                      View Full
+                      Descarga el
                     </span>
                     <span class="whitespace-nowrap">
                       <span
                         class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
                       >
-                        Résumé
+                        curriculum
                       </span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -154,19 +169,12 @@ import Layout from "../layouts/Layout.astro";
           </section>
           <footer class="max-w-md pb-16 text-sm text-neutral-500 sm:pb-0">
             <p>
-              Designed in
+              Designed by
               <a
-                href="https://www.figma.com/"
+                href="https://github.com/thevrus"
                 class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 hover:underline"
                 target="_blank"
-                rel="noreferrer">Figma</a
-              >
-              and coded in
-              <a
-                href="https://code.visualstudio.com/"
-                class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 hover:underline"
-                target="_blank"
-                rel="noreferrer">Visual Studio Code</a
+                rel="noreferrer">thevrus</a
               >
             </p>
           </footer>
@@ -176,7 +184,7 @@ import Layout from "../layouts/Layout.astro";
   </div>
 
   <footer class="text-center py-4 text-xs">
-    {new Date().getFullYear()} All rights reserved.
+    {new Date().getFullYear()} CC BY-NC-SA 4.0.
   </footer>
 </Layout>
 

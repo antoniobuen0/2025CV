@@ -2,61 +2,98 @@ import type { Props as ExperienceProp } from "../components/experience/props";
 
 export const EXPERIENCE: ExperienceProp[] = [
   {
-    dates: "November 2021 — Present",
-    title: "Full Stack Engineer",
-    company: "Dutch Pet (Remote)",
-    companyUrl: "https://www.dutch.com",
+    dates: "Ene 2023 — Oct 2024",
+    title: "Document Control Management",
+    company: "Technip Energies",
+    companyUrl: "https://www.technipenergies.com", // Actualiza si es necesario
     description:
-      "Designed and architected dutch.com, utilizing technologies such as Shopify Storefront API, Admin API, Vue.JS, Node.JS, Liquid, Alpine.js, and Tailwind. Worked on integrating with the ReCharge subscription system and collaborated closely with designers to implement pixel-perfect layouts and user flows.",
+      "Gestión e integración de bases de datos, control de versiones y data compliance. Cumplimiento normativo de especificaciones de ingeniería. Creación y análisis de informes Power BI. Coordinación y gestión documental utilizando Microsoft 365 y EDMS.",
     technologies: [
-      "Shopify Storefront API",
-      "Shopify Admin API",
-      "Vue.JS",
-      "Node.JS",
-      "Liquid",
-      "Alpine.js",
-      "Tailwind",
+      "Bases de datos",
+      "Control de versiones",
+      "Data compliance",
+      "Power BI",
+      "Microsoft 365",
+      "EDMS",
     ],
-    logo: "/logos/dutchpet.jpeg",
+    logo: "/logos/technipenergies.jpeg", // Reemplaza con la ruta correcta si aplica
   },
   {
-    dates: "March 2021 — November 2021",
-    title: "Full Stack Ecommerce Engineer",
-    company: "AbsoluteWeb",
-    companyUrl: "https://www.absoluteweb.com",
+    dates: "Oct 2020 — Ene 2022",
+    title: "Document Control Management",
+    company: "SII Concatel",
+    companyUrl: "https://www.siiconcatel.com", // Actualiza si es necesario
     description:
-      "Developed and maintained e-commerce solutions on Shopify (Storefront API, Admin API), BigCommerce, and Magento using React JS, Vue JS, Node JS, Liquid, SASS/PostCSS. Worked on integrating with the ReCharge subscription system and collaborated closely with designers to implement pixel-perfect layouts and user flows.",
+      "Toma de requisitos y diseño funcional para la planificación y gestión de documentación técnica del Pla d'educació digital de Catalunya 2020-2023. Creación de planos de cobertura con Ekahau y Aruba Central. Clasificación, reporte y análisis de documentación utilizando SharePoint, OneDrive, Excel y Power BI.",
     technologies: [
-      "React JS",
-      "Vue JS",
-      "Node JS",
-      "Shopify Storefront API",
-      "Shopify Admin API",
-      "BigCommerce",
-      "Magento",
-      "Liquid",
-      "SASS/PostCSS",
+      "SharePoint",
+      "OneDrive",
+      "Excel",
+      "Power BI",
+      "Ekahau",
+      "Aruba Central",
     ],
-    logo: "/logos/aws.jpeg",
+    logo: "/logos/siiconcatel.jpeg",
   },
   {
-    dates: "December 2019 — January 2021",
-    title: "Product Designer",
-    company: "Miinto",
-    companyUrl: "https://www.miinto.com",
+    dates: "Feb 2020 — Sep 2020",
+    title: "ICT Specialist Technician",
+    company: "Institut Municipal d'Informàtica",
+    companyUrl: "https://www.institutmunicipalinformatica.cat", // Verificar URL oficial
     description:
-      "Created a Design System for the internal system using Figma. Developed a plugin for Figma to populate prototypes with real data to enhance the prototyping and testing experience. Conducted user research and testing, and created user flows, wireframes, and Hi-Fi prototypes.",
-    technologies: ["Figma"],
-    logo: "/logos/miinto.jpeg",
+      "Revisión e integración de información y metadatos FTTx en planos APX-GIS, asegurando la precisión y actualización de la infraestructura de redes. Análisis de datos y gestión de bases de datos.",
+    technologies: [
+      "FTTx",
+      "APX-GIS",
+      "Análisis de datos",
+      "Gestión de bases de datos",
+    ],
+    logo: "/logos/institut-municipal-informatica.jpeg",
   },
   {
-    dates: "January 2019 — September 2019",
-    title: "Front-End Engineer",
-    company: "Efigence",
-    companyUrl: "https://www.efigence.com",
+    dates: "May 2018 — Jul 2019",
+    title: "Product Analyst",
+    company: "Sanysan Appliances",
+    companyUrl: "https://www.sanysanappliances.com", // Actualiza según corresponda
     description:
-      "Worked on developing a Polish Government Joint Stock Company website using JS, Magnolia CMS, and FreeMarker.",
-    technologies: ["JavaScript", "Magnolia CMS", "FreeMarker"],
-    logo: "/logos/efigence.jpeg",
+      "Análisis de datos logísticos para optimizar la cadena de suministro en Amazon, gestionando la integración de marketplaces. Evaluación de campañas publicitarias y experiencia de usuario mediante técnicas de data mining para mejorar la eficiencia operativa.",
+    technologies: [
+      "Data Mining",
+      "Amazon",
+      "Integración de Marketplaces",
+      "Análisis de datos",
+    ],
+    logo: "/logos/sanysan.jpeg",
+  },
+  {
+    dates: "Nov 2017 — May 2018",
+    title: "Data Analyst",
+    company: "Indra Sistemas",
+    companyUrl: "https://www.indracompany.com", // Verificar URL oficial
+    description:
+      "Análisis e introducción de datos para la optimización de procesos internos. Aplicación de normativa electrónica y protocolos de privacidad de datos en colaboración con el Ministerio de Energía, Turismo y Agenda Digital.",
+    technologies: [
+      "Análisis de datos",
+      "Optimización de procesos",
+      "Normativa electrónica",
+      "Privacidad de datos",
+    ],
+    logo: "/logos/indra.jpeg",
+  },
+  {
+    dates: "2011 — 2017",
+    title: "Data Management Specialist - Healthcare",
+    company: "Consellería de Sanitat",
+    companyUrl: "https://www.gencat.cat/sanitat", // Actualiza si es necesario
+    description:
+      "Digitalización documental, gestión e integración de bases de datos médicas en hospitales y centros de salud. Optimización de procesos de admisión, urgencias y listas de espera quirúrgica, cumpliendo con la normativa electrónica y protocolos de privacidad de datos.",
+    technologies: [
+      "Digitalización documental",
+      "Gestión de bases de datos",
+      "Optimización de procesos",
+      "Normativa electrónica",
+      "Privacidad de datos",
+    ],
+    logo: "/logos/conselleria-sanitat.jpeg",
   },
 ];

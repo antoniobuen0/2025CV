@@ -1,0 +1,1 @@
+export const FORMACION = 'Texto genérico de formación.'

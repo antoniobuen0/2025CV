@@ -1,0 +1,1 @@
+export const PROYECTOS = 'Texto genérico de proyectos.'
